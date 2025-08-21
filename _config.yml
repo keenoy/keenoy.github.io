@@ -26,7 +26,7 @@ url: "https://keenoy.github.io" # the base hostname & protocol for your site, e.
 github_username:  keenoy
 
 # Build settings
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
