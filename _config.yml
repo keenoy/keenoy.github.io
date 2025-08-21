@@ -29,6 +29,7 @@ github_username:  keenoy
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
 include: ["_pages"]
 
