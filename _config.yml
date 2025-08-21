@@ -26,12 +26,20 @@ url: "https://keenoy.github.io" # the base hostname & protocol for your site, e.
 github_username:  keenoy
 
 # Build settings
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 plugins:
   - jekyll-feed
 
 include: ["_pages"]
 
+# Contents
+sidebar:
+  - title: "Title"
+    image: http://placehold.it/350x250
+    image_alt: "image"
+    text: "Some text here."
+  - title: "Another Title"
+    text: "More text here."
 defaults:
   # _pages
   - scope:
@@ -48,9 +56,20 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
-      share: true
-      related: true
+      comments: false
+      share: false
+      related: false
+
+author:
+  name: "KEENOY"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "" # Note: Markdown is allowed
+  location: "South Korea"
+  links:
+    - label: "Buy Me A Coffee"
+      icon: "fas fa-fw fa-coffee"
+      url: "https://buymeacoffee.com/keenoy"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
