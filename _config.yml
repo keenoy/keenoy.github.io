@@ -64,7 +64,7 @@ defaults:
 
 author:
   name: "KEENOY"
-  avatar: "/assets/images/bio-photo.jpg"
+  avatar: "/assets/images/profile.png"
   bio: "" # Note: Markdown is allowed
   buy_me_a_coffee: "keenoy"
 
