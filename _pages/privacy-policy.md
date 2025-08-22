@@ -1,5 +1,5 @@
 ---
-permalink: /privacypolicy/
+permalink: /privacy-policy/
 ---
 
 ### 1. 개인정보 처리방침

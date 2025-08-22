@@ -20,7 +20,7 @@
 
 title: KEENOY's Devlog
 email: dev.keenoy@gmail.com
-description: KEENOY's Devlog.
+description: KEENOY's Blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://keenoy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  keenoy
@@ -34,22 +34,15 @@ plugins:
 include: ["_pages"]
 
 # Contents
-sidebar:
-  - title: "Title"
-    image: http://placehold.it/350x250
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Another Title"
-    text: "More text here."
 defaults:
-  # _pages
+  # 페이지
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
-  # _posts
+  # 포스트
   - scope:
       path: ""
       type: posts
@@ -57,7 +50,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: false
+      comments: true
       share: false
       related: false
 
@@ -66,10 +59,13 @@ author:
   avatar: "/assets/images/bio-photo.jpg"
   bio: "" # Note: Markdown is allowed
   location: "South Korea"
+
+footer:
   links:
-    - label: "Buy Me A Coffee"
-      icon: "fas fa-fw fa-coffee"
-      url: "https://buymeacoffee.com/keenoy"
+    - label: "Privacy Policy"
+      icon: "fas fa-fw fa-shield-alt"
+      url: "/privacy-policy"
+  buymeacoffee: "keenoy"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
