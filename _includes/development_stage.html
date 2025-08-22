@@ -1,0 +1,27 @@
+{% assign stage = page.development_stage.stage %}
+{% assign stage_detail = page.development_stage.detail %}
+
+<div class="development-stage">
+  <p class="title">Development Stage</p>
+  <span class="stages">
+    <i class="fa-solid fa-file stage {% if stage == 'Planning' %}now{% endif %}"></i>
+    <i class="fa-solid fa-caret-right arrow"></i>
+    <i class="fa-solid fa-magnifying-glass stage {% if stage == 'Pre-Production' %}now{% endif %}"></i>
+    <i class="fa-solid fa-caret-right arrow"></i>
+    <i class="fa-solid fa-cog stage {% if stage == 'Production' %}now{% endif %}"></i>
+    <i class="fa-solid fa-caret-right arrow"></i>
+    <i class="fa-solid fa-check-double stage {% if stage == 'QA' %}now{% endif %}"></i>
+    <i class="fa-solid fa-caret-right arrow"></i>
+    {% if stage == 'Withdrawn' %}
+      <i class="fa-solid fa-circle-exclamation stage now"></i>
+    {% else %}
+      <i class="fa-solid fa-rocket stage {% if stage == 'Launched' %}now{% endif %}"></i>
+    {% endif %}
+  </span>
+  <p class="stage-name">
+    {{stage | default: 'Unknown'}}
+  </p>
+  <p class="stage-detail">
+    {% if stage_detail %}{{ stage_detail }}{% endif %}
+  </p>
+</div>

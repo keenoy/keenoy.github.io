@@ -53,19 +53,31 @@ defaults:
       comments: true
       share: false
       related: false
+  # 게임
+  - scope:
+      path: ""
+      type: games
+    values:
+      layout: single
+      author_profile: true
+      share: false
 
 author:
   name: "KEENOY"
   avatar: "/assets/images/bio-photo.jpg"
   bio: "" # Note: Markdown is allowed
-  location: "South Korea"
+  buy_me_a_coffee: "keenoy"
+
+collections:
+  games:
+    output: true
+    permalink: /:collection/:path/
 
 footer:
   links:
     - label: "Privacy Policy"
       icon: "fas fa-fw fa-shield-alt"
       url: "/privacy-policy"
-  buymeacoffee: "keenoy"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

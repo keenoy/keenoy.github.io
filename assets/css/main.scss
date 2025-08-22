@@ -7,12 +7,74 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-footer {
-    position: relative;
+.sidebar {
+    .h-card {
+        text-align: center;
+    }
+    .bmc-icon {
+        display: inline-block;
+        height: 1.5em;
+    }
 }
-.page__footer-buymeacoffee {
-    position: absolute;
-    top: 0px;
-    right: 22px;
+
+body {
+    font-family: "Noto Sans KR",
+        apple-system,
+        BlinkMacSystemFont,
+        "Roboto",
+        "Segoe UI",
+        "Helvetica Neue",
+        "Lucida Grande",
+        Arial,
+        sans-serif;
+}
+
+.sidebar {
+    opacity: 1 !important;
+
+    .development-stage {
+        text-align: center;
+        border-top: 1px solid $border-color;
+
+        .title {
+            display: inline-block;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-block: 0.8em;
+        }
+
+        .stages {
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 0.75em;
+            color: $primary-color;
+
+            .arrow {
+                opacity: 0.5;
+                font-size: 0.75em;
+                line-height: 1.33em;
+            }
+
+            .stage {
+                opacity: 0.5;
+                &.now {
+                    font-weight: bold;
+                    opacity: 1;
+                }
+            }
+        }
+        
+        .stage-name {
+            font-weight: bold;
+            font-size: 0.75em;
+            margin: 1em 0 0.5em 0;
+        }
+        .stage-detail {
+            margin-top: 0;
+            font-size: 0.75em;
+            font-style: italic;
+        }
+    }
 }

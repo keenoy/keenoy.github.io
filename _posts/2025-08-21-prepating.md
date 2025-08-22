@@ -1,6 +1,6 @@
 ---
 lang: ko
 categories: post
-title: 공사 중
+title: 준비 중
 ---
 준비중입니다.

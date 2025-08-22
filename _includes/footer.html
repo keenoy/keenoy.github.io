@@ -23,12 +23,4 @@
 </div>
 {% endif %}
 
-{% if site.footer.buymeacoffee %}
-<div class="page__footer-buymeacoffee">
-    <a href="https://www.buymeacoffee.com/{{ site.footer.buymeacoffee }}" itemprop="sameAs" rel="nofollow noopener noreferrer me" target="_blank">
-        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
-    </a>
-</div>
-{% endif %}
-
 <div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
