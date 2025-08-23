@@ -19,6 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: KEENOY's Devlog
+display-title:
+  ko: KEENOY의 개발 일지
+  en: KEENOY's Devlog
 email: dev.keenoy@gmail.com
 description: KEENOY's Blog.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -26,23 +29,38 @@ url: "https://keenoy.github.io" # the base hostname & protocol for your site, e.
 github_username:  keenoy
 
 # Build settings
+include: ["_pages"]
 remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-include: ["_pages"]
+# Multi-Language Settings
+languages: ["ko", "en"] # 지원하고자 하는 언어
+default_lang: "ko" # 컨텐츠의 기본 언어
 
 # Contents
 defaults:
-  # 페이지
+  # 페이지 공통
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
-  # 포스트
+  # 한글 페이지
+  - scope:
+      path: "ko"
+      type: pages
+    values:
+      lang: ko
+  # 영문 페이지
+  - scope:
+      path: "en"
+      type: pages
+    values:
+      lang: en
+  # 포스트 공통
   - scope:
       path: ""
       type: posts
@@ -53,6 +71,18 @@ defaults:
       comments: true
       share: false
       related: false
+  # 한글 포스트
+  - scope:
+      path: "ko"
+      type: posts
+    values:
+      lang: ko
+  # 영문 포스트
+  - scope:
+      path: "en"
+      type: posts
+    values:
+      lang: en
   # 게임
   - scope:
       path: ""

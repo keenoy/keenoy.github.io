@@ -20,6 +20,15 @@
       {% endfor %}
     {% endif %}
   </ul>
+  <ul class="multi-lang">
+    {% for lang in site.languages %}
+    {% if lang == page.lang %}
+    <li class="active">{{ lang | upcase }}</li>
+    {% else %}
+    <li><a href="{{ lang_stripped_url | prepend: lang | absolute_url }}">{{ lang | upcase }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
 </div>
 {% endif %}
 

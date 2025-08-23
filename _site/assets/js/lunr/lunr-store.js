@@ -11,9 +11,15 @@ var store = [{
         "url": "/games/tetropow/",
         "teaser": "/assets/images/tetropow/logo.png"
       },{
-        "title": "준비 중",
-        "excerpt":"준비중입니다.  ","categories": ["post"],
+        "title": "Under Preparation",
+        "excerpt":"Under Preparation   en  ","categories": ["en","post"],
         "tags": [],
-        "url": "/post/2025/08/21/prepating.html",
+        "url": "/en/post/2025/08/21/temp.html",
+        "teaser": null
+      },{
+        "title": "준비 중",
+        "excerpt":"준비중입니다.   ko  ","categories": ["ko","post"],
+        "tags": [],
+        "url": "/ko/post/2025/08/21/temp.html",
         "teaser": null
       }]
