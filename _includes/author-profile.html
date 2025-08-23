@@ -23,8 +23,7 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }}</button>
-    <ul class="author__urls social-icons">
+    <ul class="author__urls-new social-icons">
       {% if author.location %}
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
           <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">{{ author.location }}</span>
@@ -60,14 +59,6 @@
         <li>
           <a href="https://keybase.io/{{ author.keybase }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
             <i class="fab fa-fw fa-keybase" aria-hidden="true"></i><span class="label">Keybase</span>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.buy_me_a_coffee %}
-        <li>
-          <a href="https://www.buymeacoffee.com/{{ author.buy_me_a_coffee }}" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-            <img src="{{ '/assets/images/bmc-full-logo.svg' | relative_url }}" alt="Buy Me A Coffee" class="bmc-icon" />
           </a>
         </li>
       {% endif %}
@@ -249,6 +240,16 @@
       {% endif %}
 
       {% include author-profile-custom-links.html %}
+
+      {% if author.buy_me_a_coffee %}
+      <li>
+          <a href="https://www.buymeacoffee.com/{{ author.buy_me_a_coffee }}" target="_blank" itemprop="sameAs"
+              rel="nofollow noopener noreferrer me">
+              <img src="{{ '/assets/images/bmc-full-logo.svg' | relative_url }}" alt="Buy Me A Coffee" class="bmc-icon large" />
+              <img src="{{ '/assets/images/bmc-logo.svg' | relative_url }}" alt="Buy Me A Coffee" class="bmc-icon small" />
+          </a>
+      </li>
+      {% endif %}
     </ul>
   </div>
 </div>

@@ -65,7 +65,7 @@ defaults:
 author:
   name: "KEENOY"
   avatar: "/assets/images/profile.png"
-  bio: "" # Note: Markdown is allowed
+  # bio: "" # Note: Markdown is allowed
   buy_me_a_coffee: "keenoy"
 
 collections:
