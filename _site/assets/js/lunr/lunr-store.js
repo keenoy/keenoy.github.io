@@ -12,7 +12,7 @@ var store = [{
         "teaser": "/assets/images/tetropow/logo.png"
       },{
         "title": "준비 중",
-        "excerpt":"준비중입니다.   ko  ","categories": ["post"],
+        "excerpt":"준비중입니다.  ","categories": ["post"],
         "tags": [],
         "url": "/post/2025/08/21/temp/",
         "teaser": null

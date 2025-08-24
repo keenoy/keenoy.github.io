@@ -131,8 +131,8 @@ body {
       .stage {
         opacity: 0.5;
         &.now {
-            font-weight: bold;
-            opacity: 1;
+          font-weight: bold;
+          opacity: 1;
         }
       }
     }
@@ -148,6 +148,10 @@ body {
       font-style: italic;
     }
   }
+}
+
+.greedy-nav a {
+  margin: 0 0.5rem !important;
 }
 
 footer {
