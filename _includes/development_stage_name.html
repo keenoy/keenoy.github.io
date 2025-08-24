@@ -1,0 +1,48 @@
+<span class="stage-name">
+{% case page.development_stage.stage %}
+  {% when "Planning" %}
+    {% case page.lang %}
+      {% when "ko" %}
+        기획
+      {% else %}
+        Planning
+    {% endcase %}
+  {% when "Pre-Production" %}
+    {% case page.lang %}
+      {% when "ko" %}
+        프리프로덕션
+      {% else %}
+        Pre-Production
+    {% endcase %}
+  {% when "Production" %}
+    {% case page.lang %}
+      {% when "ko" %}
+        개발 중
+      {% else %}
+        Production
+    {% endcase %}
+  {% when "QA" %}
+    QA
+  {% when "Released" %}
+    {% case page.lang %}
+      {% when "ko" %}
+        출시
+      {% else %}
+        Released
+    {% endcase %}
+  {% when "Withdrawn" %}
+    {% case page.lang %}
+      {% when "ko" %}
+        철회
+      {% else %}
+        Withdrawn
+    {% endcase %}
+  {% else %}
+    {% case page.lang %}
+      {% when "ko" %}
+        알 수 없음
+      {% else %}
+        Unknown
+    {% endcase %}
+{% endcase %}
+</span>

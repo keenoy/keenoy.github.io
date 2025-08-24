@@ -1331,13 +1331,13 @@ body { font-family: "Noto Sans KR", apple-system, BlinkMacSystemFont, "Roboto", 
 .sidebar .author__urls-new span.label { padding-inline-start: 5px; display: none; }
 @media (min-width: 64em) { .sidebar .author__urls-new span.label { display: inline; } }
 .sidebar .development-stage { text-align: center; border-top: 1px solid #f2f3f3; }
-.sidebar .development-stage .title { display: inline-block; font-size: 1.2em; font-weight: bold; margin-block: 0.8em; }
-.sidebar .development-stage .stages { display: flex; justify-content: space-evenly; font-size: 0.75em; color: #6f777d; }
+.sidebar .development-stage .title { display: inline-block; font-size: 1.2em; font-weight: bold; margin: 0.5em 0 0 0; }
+.sidebar .development-stage .stages { display: flex; justify-content: space-evenly; font-size: 0.75em; color: #6f777d; margin-block: 1em; }
 .sidebar .development-stage .stages .arrow { opacity: 0.5; font-size: 0.75em; line-height: 1.33em; }
 .sidebar .development-stage .stages .stage { opacity: 0.5; }
 .sidebar .development-stage .stages .stage.now { font-weight: bold; opacity: 1; }
-.sidebar .development-stage .stage-name { font-weight: bold; font-size: 0.75em; margin: 1em 0 0.5em 0; }
-.sidebar .development-stage .stage-detail { margin-top: 0; font-size: 0.75em; font-style: italic; }
+.sidebar .development-stage .stage-name { font-weight: bold; font-size: 0.75em; margin-bottom: 0.5em; }
+.sidebar .development-stage .stage-detail { margin-top: 0; font-size: 0.7em; font-style: italic; }
 
 footer .page__footer-follow { display: flex; justify-content: space-between; }
 footer .page__footer-follow .multi-lang { display: flex; justify-content: center; padding: 0; list-style: none; }

@@ -2,6 +2,7 @@
   {% assign show_atom = true %}
 {% endunless %}
 {% if site.footer.links or show_atom %}
+
 <div class="page__footer-follow">
   <ul class="social-icons">
     {% if site.data.ui-text[site.locale].follow_label %}
@@ -22,11 +23,14 @@
   </ul>
   <ul class="multi-lang">
     {% for lang in site.languages %}
-    {% if lang == page.lang %}
-    <li class="active">{{ lang | upcase }}</li>
-    {% else %}
-    <li><a href="{{ lang_stripped_url | prepend: lang | absolute_url }}">{{ lang | upcase }}</a></li>
-    {% endif %}
+      {% if lang == page.lang %}
+      <li class="active">{{ lang | upcase }}</li>
+      {% else %}
+      <li>
+        <a {% static_href %}href="{% if lang == site.default_lang %}{{site.baseurl}}{{page.url}}{% else %}{{site.baseurl}}/{{ lang }}{{page.url}}{% endif %}"
+          {% endstatic_href %}>{{ lang }}</a>{%- if forloop.last == false -%}{{" "}}{{ site.langsep }}{%- endif -%}
+      </li>
+      {% endif %}
     {% endfor %}
   </ul>
 </div>

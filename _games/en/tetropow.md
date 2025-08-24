@@ -1,6 +1,6 @@
 ---
 title: "Tetropow"
-excerpt: "테트리스 모양 블럭들을 같은 색 부위끼리 맞춰 없애는 퍼즐 게임"
+excerpt: "A puzzle game where you match same-colored parts of Tetris-shaped blocks to eliminate them."
 header:
   teaser: /assets/images/tetropow/logo.png
 development_stage:

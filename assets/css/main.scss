@@ -112,7 +112,7 @@ body {
       display: inline-block;
       font-size: 1.2em;
       font-weight: bold;
-      margin-block: 0.8em;
+      margin: 0.5em 0 0 0;
     }
 
     .stages {
@@ -120,6 +120,7 @@ body {
       justify-content: space-evenly;
       font-size: 0.75em;
       color: $primary-color;
+      margin-block: 1em;
 
       .arrow {
         opacity: 0.5;
@@ -139,11 +140,11 @@ body {
     .stage-name {
       font-weight: bold;
       font-size: 0.75em;
-      margin: 1em 0 0.5em 0;
+      margin-bottom: 0.5em;
     }
     .stage-detail {
       margin-top: 0;
-      font-size: 0.75em;
+      font-size: 0.7em;
       font-style: italic;
     }
   }

@@ -1,25 +1,19 @@
 var store = [{
-        "title": "Skipping Bunnies",
-        "excerpt":"Under Preparation  ","categories": [],
+        "title": "스키핑 버니즈",
+        "excerpt":"준비 중  ","categories": [],
         "tags": [],
-        "url": "/games/skipping-bunnies/",
+        "url": "/game/skipping-bunnies/",
         "teaser": "https://placehold.co/500x250?text=No+Image"
       },{
-        "title": "Tetropow",
-        "excerpt":"Under Preparation  ","categories": [],
+        "title": "테트로파우",
+        "excerpt":"준비 중  ","categories": [],
         "tags": [],
-        "url": "/games/tetropow/",
+        "url": "/game/tetropow/",
         "teaser": "/assets/images/tetropow/logo.png"
       },{
-        "title": "Under Preparation",
-        "excerpt":"Under Preparation   en  ","categories": ["en","post"],
-        "tags": [],
-        "url": "/en/post/2025/08/21/temp.html",
-        "teaser": null
-      },{
         "title": "준비 중",
-        "excerpt":"준비중입니다.   ko  ","categories": ["ko","post"],
+        "excerpt":"준비중입니다.   ko  ","categories": ["post"],
         "tags": [],
-        "url": "/ko/post/2025/08/21/temp.html",
+        "url": "/post/2025/08/21/temp/",
         "teaser": null
       }]

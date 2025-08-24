@@ -27,6 +27,7 @@ description: KEENOY's Blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://keenoy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  keenoy
+permalink: pretty
 
 # Build settings
 include: ["_pages"]
@@ -34,13 +35,37 @@ remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-polyglot
 
 # Multi-Language Settings
 languages: ["ko", "en"] # 지원하고자 하는 언어
 default_lang: "ko" # 컨텐츠의 기본 언어
+exclude_from_localization: ["image"] # 루트 레벨 폴더 중 다국어 기능 제외 시킬 폴더
+parallel_localization: false # 윈도우에서는 버그가 있어서 false로 해야 동작한다고 합니다.
 
 # Contents
 defaults:
+  # 게임
+  - scope:
+      path: ""
+      type: games
+    values:
+      layout: single
+      permalink: /game/:title/
+      author_profile: true
+      share: false
+  # 한글 게임 페이지
+  - scope:
+      path: "_games/ko"
+      type: games
+    values:
+      lang: ko
+  # 영문 게임 페이지
+  - scope:
+      path: "_games/en"
+      type: games
+    values:
+      lang: en
   # 페이지 공통
   - scope:
       path: ""
@@ -50,13 +75,13 @@ defaults:
       author_profile: true
   # 한글 페이지
   - scope:
-      path: "ko"
+      path: "_pages/ko"
       type: pages
     values:
       lang: ko
   # 영문 페이지
   - scope:
-      path: "en"
+      path: "_pages/en"
       type: pages
     values:
       lang: en
@@ -66,6 +91,7 @@ defaults:
       type: posts
     values:
       layout: single
+      permalink: /post/:year/:month/:day/:title/
       author_profile: true
       read_time: true
       comments: true
@@ -73,24 +99,16 @@ defaults:
       related: false
   # 한글 포스트
   - scope:
-      path: "ko"
+      path: "_posts/ko"
       type: posts
     values:
       lang: ko
   # 영문 포스트
   - scope:
-      path: "en"
+      path: "_posts/en"
       type: posts
     values:
       lang: en
-  # 게임
-  - scope:
-      path: ""
-      type: games
-    values:
-      layout: single
-      author_profile: true
-      share: false
 
 author:
   name: "KEENOY"
@@ -117,14 +135,5 @@ footer:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - profile.psd

@@ -1,5 +1,5 @@
 ---
-permalink: /ko
+permalink: /
 layout: home
 ---
 

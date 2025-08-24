@@ -1,6 +1,6 @@
 <!-- multilang/get-lang-vairables -->
 {% assign lang = page.lang %}
-{% assign lang_stripped_url = page.url | regex_replace_once: '\/[a-z]{2}\/', '/' }
+
 {% assign display_title = site.display-title.ko %}
 {% if page.lang == 'ko' %}
   {% assign author_bio = author.bio.ko %}

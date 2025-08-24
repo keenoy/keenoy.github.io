@@ -1,14 +1,20 @@
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 {% assign page_url = page.url %}
 
+{% if page.lang == site.default_lang %}
+  {% assign home_url = '/' | relative_url %}
+{% else %}
+  {% assign home_url = '/' | append: page.lang | append: '/' | relative_url %}
+{% endif %}
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}{{page.lang}}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
+          <a class="site-logo" href="{{ home_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}{{page.lang}}">
+        <a class="site-title" href="{{ home_url }}">
           {{ site.masthead_title | default: site.display-title[page.lang] | escape_once | strip }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle | escape_once | strip }}</span>{% endif %}
         </a>

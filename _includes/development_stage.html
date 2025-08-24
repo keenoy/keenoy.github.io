@@ -15,12 +15,10 @@
     {% if stage == 'Withdrawn' %}
       <i class="fa-solid fa-circle-exclamation stage now"></i>
     {% else %}
-      <i class="fa-solid fa-rocket stage {% if stage == 'Launched' %}now{% endif %}"></i>
+      <i class="fa-solid fa-rocket stage {% if stage == 'Released' %}now{% endif %}"></i>
     {% endif %}
   </span>
-  <p class="stage-name">
-    {{stage | default: 'Unknown'}}
-  </p>
+  {% include development_stage_name.html %}
   <p class="stage-detail">
     {% if stage_detail %}{{ stage_detail }}{% endif %}
   </p>
