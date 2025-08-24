@@ -1339,6 +1339,8 @@ body { font-family: "Noto Sans KR", apple-system, BlinkMacSystemFont, "Roboto", 
 .sidebar .development-stage .stage-name { font-weight: bold; font-size: 0.75em; margin-bottom: 0.5em; }
 .sidebar .development-stage .stage-detail { margin-top: 0; font-size: 0.7em; font-style: italic; }
 
+.greedy-nav a { margin: 0 0.5rem !important; }
+
 footer .page__footer-follow { display: flex; justify-content: space-between; }
 footer .page__footer-follow .multi-lang { display: flex; justify-content: center; padding: 0; list-style: none; }
 footer .page__footer-follow .multi-lang li { font-size: 0.75em; }
