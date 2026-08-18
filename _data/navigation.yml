@@ -1,9 +1,0 @@
-main:
-  - title:
-      ko: "포스트"
-      en: "POSTS"
-    url: /posts/
-  - title:
-      ko: "게임"
-      en: "GAMES"
-    url: /games/
