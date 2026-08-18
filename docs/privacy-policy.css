@@ -1,0 +1,22 @@
+:root {
+	--color-0: #372134;
+	--color-1: #474476;
+	--color-2: #4888b7;
+	--color-3: #6dbcb9;
+	--color-4: #8cefb6;
+}
+
+body {
+	width: min(800px, calc(100% - 40px));
+	margin: 32px auto;
+	background-color: var(--color-0);
+	color: var(--color-3);
+}
+
+a {
+	color: inherit;
+}
+
+h3 {
+	color: var(--color-4)
+}

@@ -1,0 +1,16 @@
+title: "텀블 블록: 테트로미노 타워 퍼즐"
+desc: |
+  <p>텀블 블록은 테트로미노를 쌓아 올리고, 무너뜨리고, 연쇄 콤보를 만드는 퍼즐 게임입니다.</p>
+  <p>5x5 보드 위에서 블록을 배치하고 라인을 완성하세요. 라인이 사라지면 위에 쌓여 있던 블록이 아래로 떨어지고, 공중에 남은 덩어리까지 무너지며 새로운 라인을 만들어 냅니다.</p>
+  <p>한 번의 수로 거대한 연쇄 붕괴를 만들어 보세요!</p>
+status: released
+images:
+  - ../images/tumble-blocks/0.png
+  - ../images/tumble-blocks/1.png
+  - ../images/tumble-blocks/2.png
+  - ../images/tumble-blocks/3.png
+  - ../images/tumble-blocks/4.png
+platforms:
+  - name: Google Playstore
+    image: ../images/play-store.svg
+    url: https://play.google.com/store/apps/details?id=com.keenoygames.tumbleblocks

@@ -1,0 +1,16 @@
+title: "Tumble Blocks: Tetromino Tower"
+desc: |
+  <p>Tumble Blocks is a puzzle game where you stack tetrominoes, clear lines, and create spectacular chain reactions.</p>
+  <p>Place blocks on a 5×5 board and complete rows or columns. When a line is cleared, the blocks above the lines or unsupported collapse and may complete new lines and more combos.</p>
+  <p>Create massive chain reactions with a single move!</p>
+status: released
+images:
+  - ../images/tumble-blocks/0.png
+  - ../images/tumble-blocks/1.png
+  - ../images/tumble-blocks/2.png
+  - ../images/tumble-blocks/3.png
+  - ../images/tumble-blocks/4.png
+platforms:
+  - name: Google Playstore
+    image: ../images/play-store.svg
+    url: https://play.google.com/store/apps/details?id=com.keenoygames.tumbleblocks
