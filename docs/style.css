@@ -50,25 +50,35 @@ main {
 }
 
 .profile {
+	width: min(350px, 100% - 32px);
 	margin: 64px 4px;
-	padding: 24px 32px;
+	padding: 24px;
 	display: flex;
-	align-items: stretch;
-	gap: 32px;
+	align-items: center;
+	justify-content: space-between;
+	@media screen and (max-width: 350px) {
+		justify-content: center
+	}
 
 	background-color: var(--color-2);
 	color: var(--color-0);
 	border-radius: 5px;
 
 	box-shadow: 3px 3px var(--color-1), inset 3px 3px var(--color-3);
+	box-sizing: border-box;
 
 	& > img {
-		width: 128px; height: 128px;
+		aspect-ratio: 1;
+		width: min(128px, 100% - 150px);
 		object-fit: contain;
 		border-radius: 50%;
 		background-color: var(--color-1);
 		transform: translate(2px, 2px);
 		box-shadow: -4px -4px var(--color-0);
+
+		@media screen and (max-width: 350px) {
+			display: none
+		}
 	}
 
 	& .info {
