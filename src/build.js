@@ -7,10 +7,10 @@ import YAML from "yaml";
 // Paths
 // --------------------------------------------------
 
+const LOCALES = ["ko", "en"];
 const ROOT = process.cwd();
 
 const CONTENTS_DIR = path.join(ROOT, "contents");
-const PORTFOLIOS_DIR = path.join(CONTENTS_DIR, "portfolios");
 
 const PUBLIC_DIR = path.join(ROOT, "public");
 const DIST_DIR = path.join(ROOT, "docs");
@@ -44,22 +44,28 @@ function getYamlFiles(directory) {
 // --------------------------------------------------
 // Content loading
 // --------------------------------------------------
+function loadLocale(locale) {
+	const contentDir = path.join(CONTENTS_DIR, locale);
 
-function loadProfile() {
-	const filePath = path.join(CONTENTS_DIR, "profile.yaml");
+	const profile = readYaml(
+		path.join(contentDir, "profile.yaml")
+	);
 
-	if (!fs.existsSync(filePath)) {
-		throw new Error(`Profile file not found: ${filePath}`);
-	}
+	const portfolios = loadPortfolios(
+		path.join(contentDir, "portfolios")
+	);
 
-	return readYaml(filePath);
+	return {
+		profile,
+		portfolios
+	};
 }
 
-function loadPortfolios() {
-	const files = getYamlFiles(PORTFOLIOS_DIR);
+function loadPortfolios(portfolios_dir) {
+	const files = getYamlFiles(portfolios_dir);
 
 	return files.map(file => {
-		const filePath = path.join(PORTFOLIOS_DIR, file);
+		const filePath = path.join(portfolios_dir, file);
 		return readYaml(filePath);
 	});
 }
@@ -179,10 +185,13 @@ function renderPage(profile, portfolios) {
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
+	<header>
+		${LOCALES.map(locale => `<a href="../${locale}">${locale}</a>`).join(" | ")}
+	</header>
     <main>
         ${renderProfile(profile)}
         <section class="portfolio-list">
@@ -212,39 +221,36 @@ function copyPublicFiles() {
 	);
 }
 
+function buildLocale(locale) {
+	const content = loadLocale(locale);
+
+	const html = renderPage(
+		content.profile,
+		content.portfolios
+	);
+
+	const outputDir = path.join(DIST_DIR, locale);
+
+	fs.mkdirSync(outputDir, {
+		recursive: true
+	});
+
+	writeText(
+		path.join(outputDir, "index.html"),
+		html
+	);
+}
+
 function build() {
 	console.log("Building website...");
-
-	// Make sure dist exists.
 	fs.rmSync(DIST_DIR, {
 		recursive: true,
 		force: true
 	});
-
-	fs.mkdirSync(DIST_DIR, {
-		recursive: true
-	});
-
-	// Load content.
-	const profile = loadProfile();
-	const portfolios = loadPortfolios();
-
-	console.log(`Loaded ${portfolios.length} portfolios.`);
-
-	// Generate HTML.
-	const html = renderPage(
-		profile,
-		portfolios
-	);
-
-	writeText(
-		path.join(DIST_DIR, "index.html"),
-		html
-	);
-
-	// Copy static files.
+	for (const locale of LOCALES) {
+		buildLocale(locale);
+	}
 	copyPublicFiles();
-
 	console.log("Build complete.");
 }
 

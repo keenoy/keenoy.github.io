@@ -25,6 +25,21 @@ a {
 	text-decoration: inherit;
 }
 
+header {
+	padding: 16px;
+	position: absolute;
+	width: 100%;
+	display: flex;
+	gap: 8px;
+	box-sizing: border-box;
+
+	& a {
+		color: var(--color-7);
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
 main {
 	width: min(800px, calc(100% - 40px));
 	min-height: calc(100vh - 40px);
