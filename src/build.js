@@ -11,6 +11,8 @@ const LOCALES = ["ko", "en"];
 const ROOT = process.cwd();
 
 const CONTENTS_DIR = path.join(ROOT, "contents");
+const PROFILE_DIR = path.join(CONTENTS_DIR, "profile");
+const PORTFOLIOS_DIR = path.join(CONTENTS_DIR, "portfolios");
 
 const PUBLIC_DIR = path.join(ROOT, "public");
 const DIST_DIR = path.join(ROOT, "docs");
@@ -45,15 +47,8 @@ function getYamlFiles(directory) {
 // Content loading
 // --------------------------------------------------
 function loadLocale(locale) {
-	const contentDir = path.join(CONTENTS_DIR, locale);
-
-	const profile = readYaml(
-		path.join(contentDir, "profile.yaml")
-	);
-
-	const portfolios = loadPortfolios(
-		path.join(contentDir, "portfolios")
-	);
+	const profile = readYaml(path.join(PROFILE_DIR, locale + ".yaml"));
+	const portfolios = loadPortfolios(locale);
 
 	return {
 		profile,
@@ -61,11 +56,12 @@ function loadLocale(locale) {
 	};
 }
 
-function loadPortfolios(portfolios_dir) {
-	const files = getYamlFiles(portfolios_dir);
-
-	return files.map(file => {
-		const filePath = path.join(portfolios_dir, file);
+function loadPortfolios(locale) {
+	var subdirs = fs.readdirSync(PORTFOLIOS_DIR, { withFileTypes: true })
+		.filter(p => p.isDirectory())
+		.sort(p => p.name);
+	return subdirs.map(dir => {
+		const filePath = path.join(PORTFOLIOS_DIR, dir.name, locale + ".yaml");
 		return readYaml(filePath);
 	});
 }
@@ -113,8 +109,8 @@ function renderProfile(profile) {
         <section class="profile">
 			<img src="${escapeHtml(profile.image)}"/>
 			<div class="info">
-				<h2 class="name">${escapeHtml(profile.name)}</h2>
-				<p class="desc">${escapeHtml(profile.desc)}</p>
+				<h2 class="name">${profile.name}</h2>
+				<p class="desc">${profile.desc}</p>
 				${renderLinks(profile.links)}
 			</div>
         </section>
