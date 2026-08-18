@@ -171,9 +171,9 @@ function renderPlatforms(platforms) {
 // Complete page
 // --------------------------------------------------
 
-function renderPage(profile, portfolios) {
+function renderPage(profile, portfolios, locale) {
 	return `<!doctype html>
-<html lang="en">
+<html land=${locale}>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -182,6 +182,9 @@ function renderPage(profile, portfolios) {
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+	<script>
+		localStorage.setItem("lang", "${locale}");
+	</script>
 </head>
 
 <body>
@@ -219,12 +222,7 @@ function copyPublicFiles() {
 
 function buildLocale(locale) {
 	const content = loadLocale(locale);
-
-	const html = renderPage(
-		content.profile,
-		content.portfolios
-	);
-
+	const html = renderPage(content.profile, content.portfolios, locale);
 	const outputDir = path.join(DIST_DIR, locale);
 
 	fs.mkdirSync(outputDir, {

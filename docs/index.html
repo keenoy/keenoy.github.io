@@ -1,12 +1,11 @@
 <html>
 	<head>
 		<script>
-			if (navigator.language.startsWith("ko")) {
-				location.href = "ko/";
+			var lang = localStorage.getItem("lang");
+			if (!lang) {
+				lang = navigator.language.startsWith("ko") ? "ko" : "en";
 			}
-			else {
-				location.href = "en/";
-			}
+			location.href = lang + "/";
 		</script>
 	</head>
 </html>
