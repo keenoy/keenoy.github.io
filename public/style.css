@@ -50,7 +50,7 @@ main {
 }
 
 .profile {
-	width: min(350px, 100% - 32px);
+	width: min(350px, calc(100% - 40px));
 	margin: 64px 4px;
 	padding: 24px;
 	display: flex;
@@ -69,8 +69,9 @@ main {
 	box-sizing: border-box;
 
 	& > img {
+		min-width: 0;
+		flex: 0 1 128px;
 		aspect-ratio: 1;
-		width: min(128px, 100% - 150px);
 		object-fit: contain;
 		border-radius: 50%;
 		background-color: var(--color-1);
@@ -83,6 +84,8 @@ main {
 	}
 
 	& .info {
+		flex: 1 0;
+
 		& p { margin: 0; padding: 0; }
 
 		& .name {
